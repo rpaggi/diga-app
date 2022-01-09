@@ -34,7 +34,7 @@
               <v-btn icon @click="$router.push(`/movie/${movie.id}/edit`)" title="Editar">
                 <v-icon>mdi-pencil</v-icon>
               </v-btn>
-              <v-btn icon @click="" title="Excluir">
+              <v-btn icon @click="delMovie(movie.id)" title="Excluir">
                 <v-icon>mdi-delete</v-icon>
               </v-btn>
             </v-card-title>
@@ -97,6 +97,31 @@ export default {
               this.loading = false
             }, 200)
           })
+    },
+    delMovie(id){
+      this.$swal({
+        title: 'Você tem certeza?',
+        text: "Essa ação é irreversível!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            await this.$axios.delete(`/movies/${id}`)
+            this.$swal.fire(
+                'Deletado!',
+                'O filme foi deletado.',
+                'success'
+              )
+            this.load()
+          }catch(e){
+          }
+        }
+      })
     }
   },
   mounted(){
