@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="12" md="6" offset-md="3">
       <div class="card-wrapper">
-        <v-card class="card-login">
+        <v-card class="card-login py-10">
           <h2>Registro</h2>
           <div class="card-content">
 

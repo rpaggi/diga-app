@@ -20,10 +20,8 @@
       </v-toolbar>
     </div>
     <v-row>
-      <v-col cols="12" class="offset-uw-2 col-uw-8">
-        <div class="px-10 py-4">
-          <Nuxt />
-        </div>
+      <v-col cols="12" class="offset-uw-2 col-uw-8 px-10 py-4">
+        <Nuxt />
       </v-col>
     </v-row>
   </v-app>
@@ -46,6 +44,7 @@ export default {
     logout(){
       localStorage.removeItem('token')
       this.$router.push('/login')
+      this.$store.commit('clearUser')
     }
   }
 }
@@ -54,11 +53,11 @@ export default {
 <style lang="scss">
 @media (min-width: 1922px){
   .offset-uw-2 {
-    margin-left: 16.6666666667%;
+    margin-left: 16.6666666667% !important;
   }
   .col-uw-8 {
-    flex: 0 0 66.6666666667%;
-    max-width: 66.6666666667%;
+    flex: 0 0 66.6666666667% !important;
+    max-width: 66.6666666667% !important;
   }
 }
 </style>

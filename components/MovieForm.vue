@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" md="6" offset="3">
+    <v-col cols="12" md="6" offset-md="3">
       <h2 class="text-center">{{ movieId ? 'Editar' : 'Novo' }} filme</h2>
       <v-text-field
           :label="`Nome ${movieId?'':'(*)'}`"

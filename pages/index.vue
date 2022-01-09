@@ -2,7 +2,7 @@
     <div>
       <loader v-if="loading"></loader>
       <v-row>
-        <v-col cols="11" md="8">
+        <v-col cols="10" md="8">
           <v-text-field
               placeholder="Procurar filme..."
               v-model="search"
@@ -17,7 +17,7 @@
           </v-btn>
         </v-col>
         <v-col cols="12" md="3" class="d-flex align-center">
-          <div class="d-flex justify-end flex">
+          <div class="d-flex justify-md-end justify-center flex">
             <v-btn color="error" rounded @click="$router.push('/movie/new')">Adicionar filme</v-btn>
           </div>
         </v-col>

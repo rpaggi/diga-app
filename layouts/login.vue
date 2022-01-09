@@ -17,7 +17,7 @@ export default {
     }
 
     .card-login{
-        height: 40vh;
+        min-height: 40vh;
         padding: 15px 40px;
         display:flex;
         flex-direction: column;
