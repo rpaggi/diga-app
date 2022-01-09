@@ -3,10 +3,10 @@ export const state = () => ({
 })
 
 export const mutations = {
-  user(state, user) {
+  user(state:any, user:any) {
     state.user = user
   },
-  clearUser(state){
+  clearUser(state:any){
     state.user = {}
   }
 }
